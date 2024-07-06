@@ -7,6 +7,10 @@ import {
 import { RFValue } from 'react-native-responsive-fontsize'
 import { Image, Text, View } from 'react-native'
 import HomeScreen from '../screens/App/HomeScreen'
+import SearchScreen from '../screens/App/SearchScreen'
+import AddScreen from '../screens/App/AddScreen'
+import FavouriteScreen from '../screens/App/FavouriteScreen'
+import ProfileScreen from '../screens/App/ProfileScreen'
 
 
 
@@ -19,12 +23,10 @@ const BottomTab = () => {
         tabBarActiveTintColor: ColorSheet.White,
         tabBarStyle: {
           backgroundColor: '#ffffff',
-          borderTopColor: '#ffffff',
           borderTopWidth: hp(0.05),
-          borderColor: '#DFDFDF',
+          borderColor: ColorSheet.White,
           height: hp('10%'),
-          borderTopLeftRadius: 30,
-          borderTopRightRadius: 30,
+
         },
         tabBarShowLabel: false,
       }}
@@ -39,29 +41,20 @@ const BottomTab = () => {
                 <>
                   <View
                     style={{
-                      backgroundColor: ColorSheet.Secondary,
                       borderRadius: 50,
                       padding: wp('2%'),
                     }}
                   >
-                    {/* <Image
-                      source={require('../assets/images')}
+                    <Image
+                      source={require('../assets/icons/Home-2.png')}
                       style={{
                         width: wp('6%'),
                         height: wp('6%'),
                       }}
-                    /> */}
+                    />
                   </View>
 
-                  <Text
-                    style={{
-                      fontWeight: '500',
-                      fontSize: RFValue(10),
-                      color: ColorSheet.Primary,
-                    }}
-                  >
-                    Home
-                  </Text>
+
                 </>
               ) : (
                 <>
@@ -71,24 +64,207 @@ const BottomTab = () => {
                       padding: wp('2%'),
                     }}
                   >
-                    {/* <Image
-                      source={require('../assets/icons/ICHome.png')}
+                    <Image
+                      source={require('../assets/icons/Home-1.png')}
                       style={{
                         width: wp('6%'),
                         height: wp('6%'),
                       }}
-                    /> */}
+                    />
                   </View>
 
-                  <Text
+                </>
+              )}
+            </View>
+          ),
+        })}
+      />
+      <Tab.Screen
+        name="SearchScreen"
+        component={SearchScreen}
+        options={() => ({
+          tabBarIcon: ({ focused }) => (
+            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+              {focused ? (
+                <>
+                  <View
                     style={{
-                      fontWeight: '500',
-                      fontSize: RFValue(10),
-                      color: ColorSheet.BottomTabInactive,
+                      borderRadius: 50,
+                      padding: wp('2%'),
                     }}
                   >
-                    Home
-                  </Text>
+                    <Image
+                      source={require('../assets/icons/Search-2.png')}
+                      style={{
+                        width: wp('6%'),
+                        height: wp('6%'),
+                      }}
+                    />
+                  </View>
+
+
+                </>
+              ) : (
+                <>
+                  <View
+                    style={{
+                      borderRadius: 50,
+                      padding: wp('2%'),
+                    }}
+                  >
+                    <Image
+                      source={require('../assets/icons/Search-1.png')}
+                      style={{
+                        width: wp('6%'),
+                        height: wp('6%'),
+                      }}
+                    />
+                  </View>
+
+                </>
+              )}
+            </View>
+          ),
+        })}
+      />
+      <Tab.Screen
+        name="AddScreen"
+        component={AddScreen}
+        options={() => ({
+          tabBarIcon: ({ focused }) => (
+            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+              {focused ? (
+                <>
+                  <View
+                    style={{
+                      borderRadius: 50,
+                      padding: wp('2%'),
+                    }}
+                  >
+                    <Image
+                      source={require('../assets/icons/Add-2.png')}
+                      style={{
+                        width: wp('6%'),
+                        height: wp('6%'),
+                      }}
+                    />
+                  </View>
+
+
+                </>
+              ) : (
+                <>
+                  <View
+                    style={{
+                      borderRadius: 50,
+                      padding: wp('2%'),
+                    }}
+                  >
+                    <Image
+                      source={require('../assets/icons/Add-1.png')}
+                      style={{
+                        width: wp('6%'),
+                        height: wp('6%'),
+                      }}
+                    />
+                  </View>
+
+                </>
+              )}
+            </View>
+          ),
+        })}
+      />
+      <Tab.Screen
+        name="FavouriteScreen"
+        component={FavouriteScreen}
+        options={() => ({
+          tabBarIcon: ({ focused }) => (
+            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+              {focused ? (
+                <>
+                  <View
+                    style={{
+                      borderRadius: 50,
+                      padding: wp('2%'),
+                    }}
+                  >
+                    <Image
+                      source={require('../assets/icons/Heart-2.png')}
+                      style={{
+                        width: wp('6%'),
+                        height: wp('6%'),
+                      }}
+                    />
+                  </View>
+
+
+                </>
+              ) : (
+                <>
+                  <View
+                    style={{
+                      borderRadius: 50,
+                      padding: wp('2%'),
+                    }}
+                  >
+                    <Image
+                      source={require('../assets/icons/Heart-1.png')}
+                      style={{
+                        width: wp('6%'),
+                        height: wp('6%'),
+                      }}
+                    />
+                  </View>
+
+                </>
+              )}
+            </View>
+          ),
+        })}
+      />
+      <Tab.Screen
+        name="ProfileScreen"
+        component={ProfileScreen}
+        options={() => ({
+          tabBarIcon: ({ focused }) => (
+            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+              {focused ? (
+                <>
+                  <View
+                    style={{
+                      borderRadius: 50,
+                      padding: wp('2%'),
+                    }}
+                  >
+                    <Image
+                      source={require('../assets/icons/User-2.png')}
+                      style={{
+                        width: wp('6%'),
+                        height: wp('6%'),
+                      }}
+                    />
+                  </View>
+
+
+                </>
+              ) : (
+                <>
+                  <View
+                    style={{
+                      borderRadius: 50,
+                      padding: wp('2%'),
+                    }}
+                  >
+                    <Image
+                      source={require('../assets/icons/User-1.png')}
+                      style={{
+                        width: wp('6%'),
+                        height: wp('6%'),
+                      }}
+                    />
+                  </View>
+
                 </>
               )}
             </View>

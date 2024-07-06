@@ -5,6 +5,6 @@ export const ColorSheet = {
   Black: '#000000',
   PrimaryText: '#000000',
   SecondaryText: '#ADADAD',
-  border: '#DFDFDF'
+  Border: '#DFDFDF'
 
 }
