@@ -7,10 +7,10 @@ import Routes from './src/navigations/Routes'
 
 export default function App() {
   const fonts = {
-    'urbanist-medium': require('./src/assets/fonts/Urbanist-Medium.ttf'),
-    'urbanist-regular': require('./src/assets/fonts/Urbanist-Regular.ttf'),
-    'urbanist-semiBold': require('./src/assets/fonts/Urbanist-SemiBold.ttf'),
-    'urbanist-bold': require('./src/assets/fonts/Urbanist-Bold.ttf'),
+    'Poppins-400': require('./src/assets/fonts/Poppins-Regular.ttf'),
+    'Poppins-500': require('./src/assets/fonts/Poppins-Medium.ttf'),
+    'Poppins-600': require('./src/assets/fonts/Poppins-SemiBold.ttf'),
+    'Poppins-700': require('./src/assets/fonts/Poppins-Bold.ttf'),
   }
 
   const [fontsLoaded, fontError] = useFonts(fonts)
