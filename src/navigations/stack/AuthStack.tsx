@@ -1,6 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import { useEffect, useState } from 'react'
-import OnboardingScreen1 from '../Auth/OnboardingScreen1'
+import OnboardingScreen from '../Auth/OnboardingScreen'
 
 const Stack = createStackNavigator()
 
@@ -8,10 +8,10 @@ const AuthStack = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName={'OnboardingScreen1'}
+      initialRouteName={'OnboardingScreen'}
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="OnboardingScreen1" component={OnboardingScreen1} />
+      <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
     </Stack.Navigator>
   )
 }

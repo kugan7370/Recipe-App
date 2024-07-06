@@ -11,6 +11,8 @@ export default function App() {
     'Poppins-500': require('./src/assets/fonts/Poppins-Medium.ttf'),
     'Poppins-600': require('./src/assets/fonts/Poppins-SemiBold.ttf'),
     'Poppins-700': require('./src/assets/fonts/Poppins-Bold.ttf'),
+    'Lexend-600': require('./src/assets/fonts/Lexend-SemiBold.ttf'),
+
   }
 
   const [fontsLoaded, fontError] = useFonts(fonts)
