@@ -10,7 +10,7 @@ import {
 import React from "react";
 import { ColorSheet } from "../../../ColorSheet";
 import { styles } from "./styles";
-import { CategoryData, CuisinesData, newRecipes, popularRecipes, SliderData } from "../../../Data";
+import { CategoryData, CuisinesData, newRecipes, popularRecipes, RescipesForYou, SliderData } from "../../../Data";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
 import Heading from "../../../Components/Heading";
 
@@ -77,7 +77,9 @@ const HomeScreen = () => {
 
       </View>
 
-      <ScrollView>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+      >
         {/* Popular Recipes */}
         <Heading title="Popular Recipes" isButton={true} isIcon={true} />
 
@@ -198,7 +200,7 @@ const HomeScreen = () => {
                   <View style={styles.favContainer}>
                     <Image
                       style={styles.favIcon}
-                      source={item.isLiked ? require("../../../assets/icons/Red-Heart.png") : require("../../../assets/icons/Heart-Bg.png")}
+                      source={item.isLiked ? require("../../../assets/icons/Red-Heart.png") : require("../../../assets/icons/Heart-Blank.png")}
                     />
                   </View>
                 </View>
@@ -214,12 +216,13 @@ const HomeScreen = () => {
 
         </View>
 
+
+
+
         {/* Popular Recipes this Week */}
         <Heading title="Popular Recipes This Week" isButton />
 
         {/* Popular Recipes this Week List */}
-
-        {/* New Recipes List */}
         <View style={styles.newRecipesContainer}>
           <FlatList
             data={popularRecipes}
@@ -236,7 +239,7 @@ const HomeScreen = () => {
                   <View style={styles.favContainer}>
                     <Image
                       style={styles.favIcon}
-                      source={item.isLiked ? require("../../../assets/icons/Red-Heart.png") : require("../../../assets/icons/Heart-Bg.png")}
+                      source={item.isLiked ? require("../../../assets/icons/Red-Heart.png") : require("../../../assets/icons/Heart-Blank.png")}
                     />
                   </View>
                 </View>
@@ -244,6 +247,51 @@ const HomeScreen = () => {
                 <View style={styles.newRecipesDecContainer}>
                   <Text style={styles.newRecipesDecText}>{item.desc}</Text>
                   <Text style={styles.newRecipesCreatedBy}>By {item.createdBy}</Text>
+                </View>
+
+              </View>
+            )}
+          />
+
+        </View>
+
+        {/* Recipes for You */}
+        <Heading title="Recipes For You" />
+
+        {/* Recipes for You List 2 Columns */}
+        <View style={styles.RecipesContainer}>
+          <FlatList
+            data={RescipesForYou}
+            keyExtractor={(item) => item.id.toString()}
+            numColumns={2}
+            renderItem={({ item }) => (
+              <View style={styles.RecipesInnerContainer}>
+                <View style={styles.RecipesImageContainer}>
+                  <Image
+                    style={styles.newRecipesImage}
+                    source={item.image}
+                  />
+                  <View style={styles.favContainer}>
+                    <Image
+                      style={styles.favIcon}
+                      source={item.isLiked ? require("../../../assets/icons/Red-Heart.png") : require("../../../assets/icons/Heart-Blank.png")}
+                    />
+                  </View>
+                </View>
+
+                <View style={styles.RecipesDecContainer}>
+                  <Text style={styles.newRecipesDecText}>{item.desc}</Text>
+                  <View style={styles.RecipesDecInnerContainer}>
+                    <Text style={styles.newRecipesCreatedBy}>By {item.createdBy}</Text>
+
+                    <View style={styles.ratingContainer}>
+                      <Image
+                        style={styles.popularRecipesRatingImage}
+                        source={require("../../../assets/icons/Star.png")}
+                      />
+                      <Text style={styles.RecipesRating}>{item.rating}</Text>
+                    </View>
+                  </View>
                 </View>
 
               </View>

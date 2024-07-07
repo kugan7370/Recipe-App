@@ -30,7 +30,7 @@ const Heading = ({ title, isButton, isIcon }: HeadingProps) => {
           />}
         </View>
         {isButton && <Pressable style={styles.viewContainer}>
-          <Text style={styles.viewAll}>View all</Text>
+          <Text style={styles.viewAll}>View All</Text>
         </Pressable>}
       </View>
     </View>

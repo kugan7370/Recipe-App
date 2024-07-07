@@ -173,4 +173,72 @@ export const popularRecipes = [
         isLiked: true
     },
 ]
+
+export const RescipesForYou = [
+    {
+        id: 1,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Recipes/Recipes-1.png"),
+        rating: 4.8,
+        isLiked: false,
+        createdBy: 'Wilson Saris',
+    },
+    {
+        id: 2,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Recipes/Recipes-2.png"),
+        rating: 4.5,
+        isLiked: false,
+        createdBy: 'Wilson Saris',
+    },
+    {
+        id: 3,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Recipes/Recipes-3.png"),
+        rating: 4.2,
+        isLiked: false,
+        createdBy: 'Wilson Saris',
+    },
+    {
+        id: 4,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Recipes/Recipes-4.png"),
+        rating: 4.9,
+        isLiked: false,
+        createdBy: 'Wilson Saris',
+    },
+    {
+        id: 5,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Recipes/Recipes-5.png"),
+        rating: 4.7,
+        isLiked: false,
+        createdBy: 'Wilson Saris',
+    },
+    {
+        id: 6,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Recipes/Recipes-6.png"),
+        rating: 4.7,
+        isLiked: false,
+        createdBy: 'Jaydon Carder',
+    },
+    {
+        id: 7,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Recipes/Recipes-7.png"),
+        rating: 4.8,
+        isLiked: false,
+        createdBy: 'Jaydon Carder',
+    },
+    {
+        id: 8,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Recipes/Recipes-8.png"),
+        rating: 4.8,
+        isLiked: false,
+        createdBy: 'Jaydon Carder',
+    },
+    
+]
     

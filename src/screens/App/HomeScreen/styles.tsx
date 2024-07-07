@@ -249,7 +249,7 @@ export const styles = StyleSheet.create({
 
   categoryContainer: {
     paddingLeft: wp('5%'),
-    marginTop: hp('1%'),
+    marginTop: hp('1.5%'),
     marginBottom: hp('2%'),
 
   },
@@ -327,8 +327,8 @@ export const styles = StyleSheet.create({
   // New Recipes-------------------------------------
   newRecipesContainer: {
     paddingLeft: wp('5%'),
-    marginTop: hp('2%'),
-    marginBottom: hp('2%'),
+    marginTop: hp('1.5%'),
+    marginBottom: hp('3%'),
   },
   newRecipesInnerContainer: {
     marginRight: wp('5%'),
@@ -360,6 +360,50 @@ export const styles = StyleSheet.create({
     color: ColorSheet.SecondaryText,
     fontFamily: 'Poppins-500'
   },
+
+  // new Recipes for you------------------------------------- 
+  RecipesContainer: {
+    paddingHorizontal: wp('2%'),
+    marginTop: hp('1.5%'),
+
+  },
+  RecipesInnerContainer: {
+    flex: 1,
+    marginBottom: wp('6%'),
+    marginHorizontal: wp('3%'),
+    borderRadius: 5,
+
+    borderWidth: .2,
+    overflow: 'hidden',
+    borderColor: ColorSheet.Border,
+  },
+  RecipesImageContainer: {
+
+
+    flex: 1,
+    height: hp('20%'),
+    overflow: 'hidden',
+  },
+  RecipesImage: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'contain',
+  },
+  RecipesDecContainer: {
+    padding: wp('3%'),
+    gap: hp('1%'),
+  },
+  RecipesDecInnerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  RecipesRating: {
+    fontFamily: 'Poppins-400',
+    fontSize: RFValue(10),
+
+  },
+
 
 
 
