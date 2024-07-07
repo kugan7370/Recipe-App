@@ -15,289 +15,314 @@ export const styles = StyleSheet.create({
     paddingBottom: hp('3%'),
   },
 
-  // header
-  headerContainer: {
+  // profile
+  profileContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: wp('3%'),
     paddingHorizontal: wp('5%'),
-    shadowColor: '#bebebe',
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    borderBottomColor: '#f0f0f0',
-    borderBottomWidth: 1,
-    zIndex: 999,
+    paddingTop: wp('5%'),
+  },
+  rightProfile: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   imageContainer: {
-    width: wp('16%'),
-    height: wp('16%'),
+    width: wp('15%'),
+    height: wp('15%'),
+    borderRadius: 5,
+    backgroundColor: '#D9D9D9',
     overflow: 'hidden',
-    padding: wp('1%'),
-    borderRadius: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: ColorSheet.Primary,
-
   },
-  image: {
+  profileImage: {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
-    overflow: 'hidden',
-
   },
-  ProfileContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  ProfileDetailContainer: {
-    marginLeft: wp('3%'),
-    gap: wp('1%'),
+  profileDetails: {
+    marginLeft: wp('5%'),
   },
   profileName: {
-    fontSize: RFValue(15),
-    color: ColorSheet.PrimaryText,
-    fontFamily: 'urbanist-bold',
+    fontSize: RFValue(14),
+    color: ColorSheet.Black,
+    fontFamily: 'Poppins-500'
   },
-  locationContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+  name: {
+    color: ColorSheet.Primary,
+    fontSize: RFValue(14),
+    fontFamily: 'Poppins-500'
   },
-  location: {
-    fontSize: RFValue(12),
-    color: ColorSheet.PrimaryText,
-    fontFamily: 'urbanist-regular',
+  profileDesc: {
+    fontSize: RFValue(10),
+    color: ColorSheet.SecondaryText,
   },
-  notificationContainer: {
-    width: wp('10%'),
-    height: wp('10%'),
-    padding: wp('2%'),
+  leftProfile: {
+    width: wp('9%'),
+    height: wp('9%'),
     borderRadius: 100,
-    backgroundColor: ColorSheet.Secondary,
+    borderWidth: .2,
+    borderColor: ColorSheet.Border,
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: wp('1.5%'),
     position: 'relative',
+    shadowColor: 'rgba(0, 0, 0, 0.15)'
   },
-  notificationImage: {
+  NotificaitonImage: {
     width: '100%',
     height: '100%',
-
+    objectFit: 'contain',
   },
-  notificationBadge: {
+  badgeContainer: {
     position: 'absolute',
-    top: 2,
-    right: 0,
-    backgroundColor: '#D14747',
-    width: wp('4.5%'),
-    height: wp('4.5%'),
+    top: 4,
+    right: 4,
+    width: wp('3.5%'),
+    height: wp('3.5%'),
     borderRadius: 100,
+    backgroundColor: ColorSheet.Primary,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  notificationBadgeText: {
-    fontSize: RFValue(8),
+  badgeText: {
     color: ColorSheet.White,
-    fontFamily: 'urbanist-bold',
+    fontSize: RFValue(8),
+    fontFamily: 'Poppins-500'
   },
 
-  // hero section
-  heroContainer: {
+
+  // search
+  searchContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: hp('3%'),
     paddingHorizontal: wp('5%'),
-    backgroundColor: ColorSheet.Primary,
-    marginTop: hp('4%'),
-    marginHorizontal: wp('5%'),
-    borderRadius: wp('5%'),
-    position: 'relative',
-    // height: hp('20%'),
+    paddingVertical: wp('5%'),
+    borderBottomColor: ColorSheet.Border,
+    borderBottomWidth: .2,
   },
-  heroDetailContainer: {
-    width: wp('60%'),
-    gap: hp('1%'),
-  },
-  heroTitle: {
-    fontSize: RFValue(22),
-    color: ColorSheet.White,
-    fontFamily: 'urbanist-semiBold',
-  },
-  heroSubtitle: {
-    fontSize: RFValue(8),
-    color: ColorSheet.White,
-    fontFamily: 'urbanist-regular',
-    marginTop: hp('1%'),
-  },
-  heroSpecialContainer: {
+  searchInnerContainer: {
+    width: '80%',
+    backgroundColor: 'rgba(255, 255, 255, 1)',
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: 'rgba(223, 223, 223, 1)',
+    padding: wp('3%'),
     flexDirection: 'row',
-    gap: wp('15%'),
-    marginTop: hp('2%'),
+    alignItems: 'center',
+    justifyContent: 'space-between'
   },
-  heroSpecialText: {
-    fontSize: RFValue(12),
-    color: ColorSheet.White,
-    fontFamily: 'urbanist-semiBold',
+  searchInput: {
+    fontSize: RFValue(10),
+    color: ColorSheet.Black,
+    fontFamily: 'Poppins-400',
+    flex: 1,
   },
-  heroImageContainer: {
-    width: wp('30%'),
-    position: 'absolute',
-    right: 0,
-    top: hp('3%'),
-    bottom: 0,
-    marginTop: hp('-6%'),
+  searchIcon: {
+    width: wp('4%'),
+    height: wp('4%'),
+    objectFit: 'contain',
   },
-  heroImage: {
+  filterContainer: {
+    padding: wp('3%'),
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
+    backgroundColor: ColorSheet.Primary
+  },
+  filterIcon: {
+    width: wp('5%'),
+    height: wp('5%'),
+    objectFit: 'contain',
+  },
+
+  // popular recipes
+  popularRecipesContainer: {
+    paddingHorizontal: wp('5%'),
+    paddingTop: wp('2%'),
+  },
+  popularInnerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  rightPopular: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  popularRecipes: {
+    fontSize: RFValue(14),
+    color: ColorSheet.Black,
+    fontFamily: 'Poppins-600'
+  },
+  popularRecipesIcon: {
+    width: wp('6%'),
+    height: wp('6%'),
+    objectFit: 'contain',
+    marginLeft: wp('1%')
+  },
+  viewContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: wp('2%'),
+    borderRadius: 5,
+  },
+  viewAll: {
+    fontSize: RFValue(10),
+    color: ColorSheet.SecondaryText,
+    fontFamily: 'Poppins-500'
+  },
+
+  // popular recipes--------------------------------
+
+  popularSliderMainContainer: {
+    paddingLeft: wp('5%'),
+    paddingVertical: hp('1%'),
+    marginBottom: hp('2%'),
+  },
+  popularSliderInnerContainer: {
+    marginRight: wp('5%'),
+  },
+  popularImageContainer: {
+    width: wp('73%'),
+    height: hp('22%'),
+    borderRadius: 5,
+    overflow: 'hidden',
+  },
+  popularRecipesImage: {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
   },
-
-  // service
-  servicesContainer: {
-    paddingHorizontal: wp('5%'),
-    marginTop: hp('2%'),
-
-  },
-  serviceInnerContainer: {
+  popularDecContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    paddingHorizontal: wp('3%'),
+    paddingVertical: wp('4%'),
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  popularDecText: {
+    fontSize: RFValue(12),
+    color: ColorSheet.White,
+    fontFamily: 'Poppins-500'
+  },
+  ratingContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  popularRecipesRatingImage: {
+    width: wp('3%'),
+    height: wp('3%'),
+    objectFit: 'contain',
+    marginRight: wp('1%')
+  },
+  rating: {
+    fontSize: RFValue(10),
+    color: ColorSheet.White,
+    fontFamily: 'Poppins-400'
+  },
+  favContainer: {
+    position: 'absolute',
+    top: 5,
+    right: 5,
+    padding: wp('3%'),
+    width: wp('8%'),
+    height: wp('8%'),
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 100,
+    backgroundColor: 'rgba(255, 255, 255, 0.5)'
+  },
+  favIcon: {
+    width: wp('5%'),
+    height: wp('5%'),
+    objectFit: 'contain',
+  },
+
+
+  // meal type--------------------------------------
+
+  categoryContainer: {
+    paddingLeft: wp('5%'),
+    marginTop: hp('1%'),
     marginBottom: hp('2%'),
 
   },
-  servicesTitle: {
-    fontSize: RFValue(14),
-    color: ColorSheet.PrimaryText,
-    fontFamily: 'urbanist-medium',
-  },
-  buttonContainer: {
-    alignSelf: 'flex-end',
-    paddingVertical: wp('2%'),
-    paddingHorizontal: wp('4%'),
-    backgroundColor: ColorSheet.Primary,
-    borderRadius: 20,
-  },
-  buttonText: {
-    fontSize: RFValue(12),
-    color: ColorSheet.White,
-    fontFamily: 'urbanist-semiBold',
-  },
-
-  // upComingContainer
-  upComingContainer: {
+  categoryInnerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: wp('4%'),
-    height: 'auto',
-    borderRadius: wp('2%'),
+    justifyContent: 'center',
     backgroundColor: ColorSheet.Secondary,
-  },
-  upComingImgContainer: {
-    backgroundColor: ColorSheet.Primary,
-    width: wp('30%'),
-    height: hp('15%'),
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflow: 'hidden',
-    borderRadius: wp('2%'),
-  },
-  upDetailsContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: wp('1%'),
-  },
-  upComingImage: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-  },
-  upComingDetail: {
-    marginLeft: wp('3%'),
-    gap: hp('1%'),
-  },
-  upScheduleDetails: {
-    flexDirection: 'row',
     gap: wp('3%'),
+    paddingRight: wp('5%'),
+    paddingLeft: wp('2%'),
+    paddingVertical: hp('1%'),
+    minWidth: wp('20%'),
+    borderRadius: 5,
+    marginRight: wp('2%'),
   },
-
-  upTitle: {
-    fontSize: RFValue(14),
-    color: ColorSheet.Primary,
-    fontFamily: 'urbanist-bold',
-  },
-  UpAuthor: {
-    fontSize: RFValue(12),
-    color: ColorSheet.SecondaryText,
-    marginTop: hp('1%'),
-    fontFamily: 'urbanist-semiBold',
-  },
-  schedule: {
-    fontSize: RFValue(12),
-    color: ColorSheet.SecondaryText,
-    fontFamily: 'urbanist-medium',
-  },
-  calenderIcon: {
-    width: wp('4%'),
-    height: wp('4%'),
-  },
-
-  // contact us
-  contactContainer: {
-    marginTop: hp('3%'),
-    overflow: 'hidden',
-    minHeight: hp('25%'),
-    height: hp('27%'),
-  },
-  backgroundOverlay: {
+  firstCategoryInnerContainer: {
     backgroundColor: ColorSheet.Primary,
-    width: '100%',
-    height: '100%',
-    padding: wp('5%'),
-    opacity: 0.9,
   },
-
-  iconMainContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginTop: hp('2%'),
-    gap: wp('5%'),
-  },
-  iconInnerContainer: {
-    alignItems: 'center',
-    backgroundColor: '#abc9c783',
-    height: hp('13%'),
-    width: wp('28%'),
-    borderRadius: wp('2%'),
-    justifyContent: 'center',
+  firstCategoryText: {
+    color: ColorSheet.White,
+    fontFamily: 'Poppins-500',
+    fontSize: RFValue(14),
+    marginLeft: wp('2%'),
 
   },
-  iconContainer: {
-    width: wp('12%'),
-    height: wp('12%'),
-    borderRadius: wp('6%'),
+
+  categoryImageContainer: {
+    width: wp('6%'),
+    height: wp('6%'),
+    borderRadius: 100,
+    overflow: 'hidden',
     backgroundColor: ColorSheet.White,
     justifyContent: 'center',
     alignItems: 'center',
-    opacity: 1
   },
-  contactText: {
+  categoryImage: {
+    width: wp('4%'),
+    height: hp('4%'),
+    objectFit: 'contain',
+
+  },
+  categoryText: {
+    fontSize: RFValue(10),
+    color: ColorSheet.Black,
+    fontFamily: 'Poppins-400'
+  },
+
+  // cuisines----------------------------------------
+  cuisinesContainer: {
+    marginRight: wp('5%'),
+  },
+  cuisinesImageContainer: {
+    width: wp('23%'),
+    height: wp('23%'),
+    borderRadius: 5,
+    overflow: 'hidden',
+    backgroundColor: ColorSheet.White,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: hp('1%'),
+  },
+  cuisinesImage: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'contain',
+  },
+  cuisinesText: {
     fontSize: RFValue(12),
-    color: ColorSheet.White,
-    marginTop: hp('1%'),
-    fontFamily: 'urbanist-medium',
+    color: ColorSheet.Black,
+    fontFamily: 'Poppins-500',
+    textAlign: 'center',
   },
-  contactSubtitle: {
-    fontSize: RFValue(12),
-    fontFamily: 'urbanist-medium',
-    color: ColorSheet.White,
-  },
-  contactTitle: {
-    fontSize: RFValue(15),
-    color: ColorSheet.White,
-    marginTop: hp('1%'),
-    fontFamily: 'urbanist-semiBold',
-  },
+
+
 })
