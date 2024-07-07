@@ -179,7 +179,7 @@ export const styles = StyleSheet.create({
   popularSliderMainContainer: {
     paddingLeft: wp('5%'),
     paddingVertical: hp('1%'),
-    marginBottom: hp('2%'),
+    marginBottom: hp('1%'),
   },
   popularSliderInnerContainer: {
     marginRight: wp('5%'),
@@ -323,6 +323,42 @@ export const styles = StyleSheet.create({
     fontFamily: 'Poppins-500',
     textAlign: 'center',
   },
+
+  // New Recipes-------------------------------------
+  newRecipesContainer: {
+    paddingLeft: wp('5%'),
+    marginTop: hp('2%'),
+    marginBottom: hp('10%'),
+  },
+  newRecipesInnerContainer: {
+    marginRight: wp('5%'),
+    width: wp('35%'),
+  },
+  newRecipesImageContainer: {
+    width: wp('35%'),
+    height: wp('35%'),
+    borderRadius: 5,
+    overflow: 'hidden',
+  },
+  newRecipesImage: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+  },
+  newRecipesDecContainer: {
+
+  },
+  newRecipesDecText: {
+    fontSize: RFValue(11),
+    color: ColorSheet.Black,
+    fontFamily: 'Poppins-500'
+  },
+  newRecipesCreatedBy: {
+    fontSize: RFValue(10),
+    color: ColorSheet.SecondaryText,
+    fontFamily: 'Poppins-500'
+  },
+
 
 
 })
