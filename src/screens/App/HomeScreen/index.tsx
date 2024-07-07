@@ -10,7 +10,7 @@ import {
 import React from "react";
 import { ColorSheet } from "../../../ColorSheet";
 import { styles } from "./styles";
-import { CategoryData, CuisinesData, newRecipes, SliderData } from "../../../Data";
+import { CategoryData, CuisinesData, newRecipes, popularRecipes, SliderData } from "../../../Data";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
 import Heading from "../../../Components/Heading";
 
@@ -185,6 +185,44 @@ const HomeScreen = () => {
         <View style={styles.newRecipesContainer}>
           <FlatList
             data={newRecipes}
+            keyExtractor={(item) => item.id.toString()}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item }) => (
+              <View style={styles.newRecipesInnerContainer}>
+                <View style={styles.newRecipesImageContainer}>
+                  <Image
+                    style={styles.newRecipesImage}
+                    source={item.image}
+                  />
+                  <View style={styles.favContainer}>
+                    <Image
+                      style={styles.favIcon}
+                      source={item.isLiked ? require("../../../assets/icons/Red-Heart.png") : require("../../../assets/icons/Heart-Bg.png")}
+                    />
+                  </View>
+                </View>
+
+                <View style={styles.newRecipesDecContainer}>
+                  <Text style={styles.newRecipesDecText}>{item.desc}</Text>
+                  <Text style={styles.newRecipesCreatedBy}>By {item.createdBy}</Text>
+                </View>
+
+              </View>
+            )}
+          />
+
+        </View>
+
+        {/* Popular Recipes this Week */}
+        <Heading title="Popular Recipes This Week" isButton />
+
+        {/* Popular Recipes this Week List */}
+
+        {/* New Recipes List */}
+        <View style={styles.newRecipesContainer}>
+          <FlatList
+            data={popularRecipes}
             keyExtractor={(item) => item.id.toString()}
             horizontal
             showsHorizontalScrollIndicator={false}

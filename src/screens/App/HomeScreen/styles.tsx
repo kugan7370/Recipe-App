@@ -92,7 +92,7 @@ export const styles = StyleSheet.create({
   },
 
 
-  // search
+  // search---------------------------------------
   searchContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -174,7 +174,7 @@ export const styles = StyleSheet.create({
     fontFamily: 'Poppins-500'
   },
 
-  // popular recipes--------------------------------
+  // Popular slider recipes--------------------------------
 
   popularSliderMainContainer: {
     paddingLeft: wp('5%'),
@@ -328,7 +328,7 @@ export const styles = StyleSheet.create({
   newRecipesContainer: {
     paddingLeft: wp('5%'),
     marginTop: hp('2%'),
-    marginBottom: hp('10%'),
+    marginBottom: hp('2%'),
   },
   newRecipesInnerContainer: {
     marginRight: wp('5%'),
@@ -346,6 +346,8 @@ export const styles = StyleSheet.create({
     objectFit: 'cover',
   },
   newRecipesDecContainer: {
+    marginTop: hp('1%'),
+    gap: hp('1%'),
 
   },
   newRecipesDecText: {

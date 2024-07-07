@@ -133,4 +133,44 @@ export const newRecipes = [
         isLiked: true
     },
 ]
+
+
+export const popularRecipes = [
+    {
+        id: 1,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Popular Recipes/Popular Recipes-1.png"),
+        createdBy: 'Allison Dorwart',
+        isLiked: false
+
+    },
+    {
+        id: 2,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Popular Recipes/Popular Recipes-2.png"),
+        createdBy: 'Hanna Westervelt',
+        isLiked: false
+    },
+    {
+        id: 3,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Popular Recipes/Popular Recipes-3.png"),
+        createdBy: 'Wilson Saris',
+        isLiked: false
+    },
+    {
+        id: 4,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Popular Recipes/Popular Recipes-4.png"),
+        createdBy: 'Makenna Botosh',
+        isLiked: false
+    },
+    {
+        id: 5,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Popular Recipes/Popular Recipes-5.png"),
+        createdBy: 'By Jaydon Carder',
+        isLiked: true
+    },
+]
     
