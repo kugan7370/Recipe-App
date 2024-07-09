@@ -15,7 +15,7 @@ const AddScreen = () => {
         backgroundColor={ColorSheet.White}
         animated={true}
       />
-      <Text>Home Screen</Text>
+      <Text>Add Screen</Text>
     </SafeAreaView>
   );
 };

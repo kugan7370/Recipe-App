@@ -15,7 +15,7 @@ const FavouriteScreen = () => {
         backgroundColor={ColorSheet.White}
         animated={true}
       />
-      <Text>Home Screen</Text>
+      <Text>Favourite Screen</Text>
     </SafeAreaView>
   );
 };

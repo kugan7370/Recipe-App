@@ -241,4 +241,57 @@ export const RescipesForYou = [
     },
     
 ]
+
+
+export const SearchData=[
+    {
+        id: 1,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Italian Cuisine/Italian Cuisine-1.png"),
+        rating: 4.8,
+        isLiked: true,
+        createdBy: 'Allison Dorwart',
+    },
+    {
+        id: 2,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Italian Cuisine/Italian Cuisine-2.png"),
+        rating: 4.5,
+        isLiked: true,
+        createdBy: 'Allison Dorwart',
+    },
+    {
+        id: 3,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Italian Cuisine/Italian Cuisine-3.png"),
+        rating: 4.2,
+        isLiked: true,
+        createdBy: 'Allison Dorwart',
+    },
+    {
+        id: 4,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Italian Cuisine/Italian Cuisine-4.png"),
+        rating: 4.9,
+        isLiked: true,
+        createdBy: 'Allison Dorwart',
+    },
+    {
+        id: 5,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Italian Cuisine/Italian Cuisine-5.png"),
+        rating: 4.7,
+        isLiked: true,
+        createdBy: 'Allison Dorwart',
+    },
+    {
+        id: 6,
+        desc: 'Lorem ipsum dolor sit amet',
+        image: require("../assets/images/Italian Cuisine/Italian Cuisine-6.png"),
+        rating: 4.7,
+        isLiked: true,
+        createdBy: 'Allison Dorwart',
+    },
+   
+]
     

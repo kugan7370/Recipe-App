@@ -15,7 +15,7 @@ const ProfileScreen = () => {
         backgroundColor={ColorSheet.White}
         animated={true}
       />
-      <Text>Home Screen</Text>
+      <Text>Profile Screen</Text>
     </SafeAreaView>
   );
 };
