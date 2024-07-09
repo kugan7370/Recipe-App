@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, StatusBar } from 'react-native'
 import { RFValue } from 'react-native-responsive-fontsize'
 import {
   widthPercentageToDP as wp,
