@@ -1,3 +1,5 @@
+import { NativeStackNavigationProp } from "react-native-screens/lib/typescript/native-stack/types";
+
 export interface Ingredient {
     name: string;
     quantity: number;
@@ -32,3 +34,20 @@ export interface Ingredient {
       };
     };
   }
+
+
+  // types.ts
+
+
+// Define your navigation stack
+export type RootStackParamList = {
+  HomeScreen: undefined;
+  SearchScreen: { focusSearchInput: boolean };
+  Details: { item: any };
+  // Add other screens and their params here
+};
+
+// Define the navigation prop type for your screens
+export type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'HomeScreen'>;
+export type SearchScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'SearchScreen'>;
+export type DetailsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Details'>;

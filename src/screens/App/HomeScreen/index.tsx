@@ -11,11 +11,23 @@ import React from "react";
 import { ColorSheet } from "../../../ColorSheet";
 import { styles } from "./styles";
 import { CategoryData, CuisinesData, newRecipes, popularRecipes, RescipesForYou, SliderData } from "../../../Data";
-import { FlatList, ScrollView } from "react-native-gesture-handler";
+import { FlatList } from "react-native-gesture-handler";
 import Heading from "../../../Components/Heading";
-
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "react-native-screens/lib/typescript/native-stack/types";
+import { RootStackParamList } from "../../../Model";
 
 const HomeScreen = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList, 'HomeScreen'>>();
+
+  const handleSearchPress = () => {
+    navigation.navigate('SearchScreen', { focusSearchInput: true });
+  };
+
+  const handleImagePress = (item: any) => {
+    navigation.navigate('Details', { item });
+  };
+
   const renderHorizontalFlatList = (data: any, renderItem: any) => (
     <FlatList
       data={data}
@@ -34,30 +46,32 @@ const HomeScreen = () => {
         return (
           <View style={styles.popularSliderMainContainer}>
             {renderHorizontalFlatList(SliderData, ({ item }: any) => (
-              <View style={styles.popularSliderInnerContainer}>
-                <View style={styles.popularImageContainer}>
-                  <Image
-                    style={styles.popularRecipesImage}
-                    source={item.image}
-                  />
-                  <View style={styles.popularDecContainer}>
-                    <Text style={styles.popularDecText}>{item.dec}</Text>
-                    <View style={styles.ratingContainer}>
+              <Pressable onPress={() => handleImagePress(item)}>
+                <View style={styles.popularSliderInnerContainer}>
+                  <View style={styles.popularImageContainer}>
+                    <Image
+                      style={styles.popularRecipesImage}
+                      source={item.image}
+                    />
+                    <View style={styles.popularDecContainer}>
+                      <Text style={styles.popularDecText}>{item.dec}</Text>
+                      <View style={styles.ratingContainer}>
+                        <Image
+                          style={styles.popularRecipesRatingImage}
+                          source={require("../../../assets/icons/Star.png")}
+                        />
+                        <Text style={styles.rating}>{item.rating}</Text>
+                      </View>
+                    </View>
+                    <View style={styles.favContainer}>
                       <Image
-                        style={styles.popularRecipesRatingImage}
-                        source={require("../../../assets/icons/Star.png")}
+                        style={styles.favIcon}
+                        source={item.isLiked ? require("../../../assets/icons/Red-Heart.png") : require("../../../assets/icons/Heart-Bg.png")}
                       />
-                      <Text style={styles.rating}>{item.rating}</Text>
                     </View>
                   </View>
-                  <View style={styles.favContainer}>
-                    <Image
-                      style={styles.favIcon}
-                      source={item.isLiked ? require("../../../assets/icons/Red-Heart.png") : require("../../../assets/icons/Heart-Bg.png")}
-                    />
-                  </View>
                 </View>
-              </View>
+              </Pressable>
             ))}
           </View>
         );
@@ -65,18 +79,20 @@ const HomeScreen = () => {
         return (
           <View style={styles.categoryContainer}>
             {renderHorizontalFlatList(CategoryData, ({ item, index }: any) => (
-              <View style={[
-                styles.categoryInnerContainer,
-                index === 0 && styles.firstCategoryInnerContainer
-              ]}>
-                {item.image && <View style={styles.categoryImageContainer}>
-                  <Image
-                    style={styles.categoryImage}
-                    source={item.image}
-                  />
-                </View>}
-                <Text style={[styles.categoryText, index === 0 && styles.firstCategoryText]}>{item.title}</Text>
-              </View>
+              <Pressable onPress={() => handleImagePress(item)}>
+                <View style={[
+                  styles.categoryInnerContainer,
+                  index === 0 && styles.firstCategoryInnerContainer
+                ]}>
+                  {item.image && <View style={styles.categoryImageContainer}>
+                    <Image
+                      style={styles.categoryImage}
+                      source={item.image}
+                    />
+                  </View>}
+                  <Text style={[styles.categoryText, index === 0 && styles.firstCategoryText]}>{item.title}</Text>
+                </View>
+              </Pressable>
             ))}
           </View>
         );
@@ -84,15 +100,17 @@ const HomeScreen = () => {
         return (
           <View style={styles.categoryContainer}>
             {renderHorizontalFlatList(CuisinesData, ({ item, index }: any) => (
-              <View style={styles.cuisinesContainer}>
-                <View style={styles.cuisinesImageContainer}>
-                  <Image
-                    style={styles.cuisinesImage}
-                    source={item.image}
-                  />
+              <Pressable onPress={() => handleImagePress(item)}>
+                <View style={styles.cuisinesContainer}>
+                  <View style={styles.cuisinesImageContainer}>
+                    <Image
+                      style={styles.cuisinesImage}
+                      source={item.image}
+                    />
+                  </View>
+                  <Text style={styles.cuisinesText}>{item.title}</Text>
                 </View>
-                <Text style={styles.cuisinesText}>{item.title}</Text>
-              </View>
+              </Pressable>
             ))}
           </View>
         );
@@ -100,62 +118,9 @@ const HomeScreen = () => {
         return (
           <View style={styles.newRecipesContainer}>
             {renderHorizontalFlatList(newRecipes, ({ item }: any) => (
-              <View style={styles.newRecipesInnerContainer}>
-                <View style={styles.newRecipesImageContainer}>
-                  <Image
-                    style={styles.newRecipesImage}
-                    source={item.image}
-                  />
-                  <View style={styles.favContainer}>
-                    <Image
-                      style={styles.favIcon}
-                      source={item.isLiked ? require("../../../assets/icons/Red-Heart.png") : require("../../../assets/icons/Heart-Blank.png")}
-                    />
-                  </View>
-                </View>
-                <View style={styles.newRecipesDecContainer}>
-                  <Text style={styles.newRecipesDecText}>{item.desc}</Text>
-                  <Text style={styles.newRecipesCreatedBy}>By {item.createdBy}</Text>
-                </View>
-              </View>
-            ))}
-          </View>
-        );
-      case 'popularRecipesWeek':
-        return (
-          <View style={styles.newRecipesContainer}>
-            {renderHorizontalFlatList(popularRecipes, ({ item }: any) => (
-              <View style={styles.newRecipesInnerContainer}>
-                <View style={styles.newRecipesImageContainer}>
-                  <Image
-                    style={styles.newRecipesImage}
-                    source={item.image}
-                  />
-                  <View style={styles.favContainer}>
-                    <Image
-                      style={styles.favIcon}
-                      source={item.isLiked ? require("../../../assets/icons/Red-Heart.png") : require("../../../assets/icons/Heart-Blank.png")}
-                    />
-                  </View>
-                </View>
-                <View style={styles.newRecipesDecContainer}>
-                  <Text style={styles.newRecipesDecText}>{item.desc}</Text>
-                  <Text style={styles.newRecipesCreatedBy}>By {item.createdBy}</Text>
-                </View>
-              </View>
-            ))}
-          </View>
-        );
-      case 'recipesForYou':
-        return (
-          <View style={styles.RecipesContainer}>
-            <FlatList
-              data={RescipesForYou}
-              keyExtractor={(item) => item.id.toString()}
-              numColumns={2}
-              renderItem={({ item }) => (
-                <View style={styles.RecipesInnerContainer}>
-                  <View style={styles.RecipesImageContainer}>
+              <Pressable onPress={() => handleImagePress(item)}>
+                <View style={styles.newRecipesInnerContainer}>
+                  <View style={styles.newRecipesImageContainer}>
                     <Image
                       style={styles.newRecipesImage}
                       source={item.image}
@@ -167,20 +132,79 @@ const HomeScreen = () => {
                       />
                     </View>
                   </View>
-                  <View style={styles.RecipesDecContainer}>
+                  <View style={styles.newRecipesDecContainer}>
                     <Text style={styles.newRecipesDecText}>{item.desc}</Text>
-                    <View style={styles.RecipesDecInnerContainer}>
-                      <Text style={styles.newRecipesCreatedBy}>By {item.createdBy}</Text>
-                      <View style={styles.ratingContainer}>
+                    <Text style={styles.newRecipesCreatedBy}>By {item.createdBy}</Text>
+                  </View>
+                </View>
+              </Pressable>
+            ))}
+          </View>
+        );
+      case 'popularRecipesWeek':
+        return (
+          <View style={styles.newRecipesContainer}>
+            {renderHorizontalFlatList(popularRecipes, ({ item }: any) => (
+              <Pressable onPress={() => handleImagePress(item)}>
+                <View style={styles.newRecipesInnerContainer}>
+                  <View style={styles.newRecipesImageContainer}>
+                    <Image
+                      style={styles.newRecipesImage}
+                      source={item.image}
+                    />
+                    <View style={styles.favContainer}>
+                      <Image
+                        style={styles.favIcon}
+                        source={item.isLiked ? require("../../../assets/icons/Red-Heart.png") : require("../../../assets/icons/Heart-Blank.png")}
+                      />
+                    </View>
+                  </View>
+                  <View style={styles.newRecipesDecContainer}>
+                    <Text style={styles.newRecipesDecText}>{item.desc}</Text>
+                    <Text style={styles.newRecipesCreatedBy}>By {item.createdBy}</Text>
+                  </View>
+                </View>
+              </Pressable>
+            ))}
+          </View>
+        );
+      case 'recipesForYou':
+        return (
+          <View style={styles.RecipesContainer}>
+            <FlatList
+              data={RescipesForYou}
+              keyExtractor={(item) => item.id.toString()}
+              numColumns={2}
+              renderItem={({ item }) => (
+                <Pressable onPress={() => handleImagePress(item)}>
+                  <View style={styles.RecipesInnerContainer}>
+                    <View style={styles.RecipesImageContainer}>
+                      <Image
+                        style={styles.newRecipesImage}
+                        source={item.image}
+                      />
+                      <View style={styles.favContainer}>
                         <Image
-                          style={styles.popularRecipesRatingImage}
-                          source={require("../../../assets/icons/Star.png")}
+                          style={styles.favIcon}
+                          source={item.isLiked ? require("../../../assets/icons/Red-Heart.png") : require("../../../assets/icons/Heart-Blank.png")}
                         />
-                        <Text style={styles.RecipesRating}>{item.rating}</Text>
+                      </View>
+                    </View>
+                    <View style={styles.RecipesDecContainer}>
+                      <Text style={styles.newRecipesDecText}>{item.desc}</Text>
+                      <View style={styles.RecipesDecInnerContainer}>
+                        <Text style={styles.newRecipesCreatedBy}>By {item.createdBy}</Text>
+                        <View style={styles.ratingContainer}>
+                          <Image
+                            style={styles.popularRecipesRatingImage}
+                            source={require("../../../assets/icons/Star.png")}
+                          />
+                          <Text style={styles.RecipesRating}>{item.rating}</Text>
+                        </View>
                       </View>
                     </View>
                   </View>
-                </View>
+                </Pressable>
               )}
             />
           </View>
@@ -206,32 +230,12 @@ const HomeScreen = () => {
           </View>
         </View>
         <View style={styles.leftProfile}>
-          <Image
-            style={styles.NotificaitonImage}
-            source={require("../../../assets/icons/Notification.png")}
-          />
-          <View style={styles.badgeContainer}>
-            <Text style={styles.badgeText}>3</Text>
-          </View>
-        </View>
-      </View>
-      <View style={styles.searchContainer}>
-        <View style={styles.searchInnerContainer}>
-          <TextInput
-            style={styles.searchInput}
-            placeholder="Search"
-            placeholderTextColor='rgba(173, 173, 173, 1)'
-          />
-          <Image
-            style={styles.searchIcon}
-            source={require("../../../assets/icons/Search-1.png")}
-          />
-        </View>
-        <View style={styles.filterContainer}>
-          <Image
-            style={styles.filterIcon}
-            source={require("../../../assets/icons/Filter.png")}
-          />
+          <Pressable onPress={handleSearchPress}>
+            <Image
+              style={styles.searchIcon}
+              source={require("../../../assets/icons/Search-1.png")}
+            />
+          </Pressable>
         </View>
       </View>
     </View>
@@ -284,17 +288,18 @@ const HomeScreen = () => {
           </View>
         </View>
         <View style={styles.searchContainer}>
-          <View style={styles.searchInnerContainer}>
+          <Pressable onPress={handleSearchPress} style={styles.searchInnerContainer}>
             <TextInput
               style={styles.searchInput}
               placeholder="Search"
               placeholderTextColor='rgba(173, 173, 173, 1)'
+              editable={false} // Make it non-editable to prevent typing
             />
             <Image
               style={styles.searchIcon}
               source={require("../../../assets/icons/Search-1.png")}
             />
-          </View>
+          </Pressable>
           <View style={styles.filterContainer}>
             <Image
               style={styles.filterIcon}

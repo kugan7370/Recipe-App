@@ -1,18 +1,27 @@
+import React, { useRef, useEffect } from "react";
 import {
   FlatList,
   Image,
+  Pressable,
   SafeAreaView,
   StatusBar,
   Text,
   TextInput,
   View,
 } from "react-native";
-import React from "react";
 import { ColorSheet } from "../../../ColorSheet";
 import { styles } from "./styles";
 import { SearchData } from "../../../Data";
+import { useNavigation } from "@react-navigation/native";
 
 const SearchScreen = () => {
+  const searchInputRef = useRef<TextInput>(null); // Create a ref for the TextInput
+  const navigator = useNavigation();
+  useEffect(() => {
+    // Focus the input when the component is mounted
+    searchInputRef.current?.focus();
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar
@@ -20,16 +29,16 @@ const SearchScreen = () => {
         backgroundColor={ColorSheet.White}
         animated={true}
       />
-
       {/* header */}
       <View style={styles.headerContainer}>
-        <View style={styles.iconContainer}>
+        <Pressable
+          onPress={() => navigator.goBack()}
+          style={styles.iconContainer}>
           <Image
             source={require("../../../assets/icons/left-arrow.png")}
             style={styles.icon}
           />
-
-        </View>
+        </Pressable>
         <Text style={styles.headerText}>Italian Cuisine</Text>
         <View style={styles.leftProfile}>
           <Image
@@ -46,6 +55,7 @@ const SearchScreen = () => {
       <View style={styles.searchContainer}>
         <View style={styles.searchInnerContainer}>
           <TextInput
+            ref={searchInputRef} // Assign ref to TextInput
             style={styles.searchInput}
             placeholder="Search"
             placeholderTextColor='rgba(173, 173, 173, 1)'
@@ -64,7 +74,6 @@ const SearchScreen = () => {
       </View>
 
       {/* search result */}
-
       <View style={styles.searchResultContainer}>
         <FlatList
           data={SearchData}
@@ -77,7 +86,6 @@ const SearchScreen = () => {
                   style={styles.img}
                   source={item.image}
                 />
-
                 {/* top contents */}
                 <View style={styles.topContentContainer}>
                   <View style={styles.topContentLeftContainer}>
@@ -93,9 +101,7 @@ const SearchScreen = () => {
                       source={item.isLiked ? require("../../../assets/icons/Red-Heart.png") : require("../../../assets/icons/Heart-Bg.png")}
                     />
                   </View>
-
                 </View>
-
                 {/* bottom contents */}
                 <View style={styles.bottomContentContainer}>
                   <Text style={styles.bottomContentText}>{item.desc}</Text>
@@ -106,18 +112,14 @@ const SearchScreen = () => {
                     />
                     <Text style={styles.time}>35 mins</Text>
                     <Text style={styles.createdBy}>By {item.createdBy}</Text>
-
                   </View>
-
                 </View>
-
               </View>
-
             </View>
           )}
         />
       </View>
-    </SafeAreaView >
+    </SafeAreaView>
   );
 };
 
