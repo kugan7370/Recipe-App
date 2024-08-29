@@ -18,10 +18,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/icons/icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kugan_priyan.recipeapp"
     },
     "web": {
       "favicon": "./src/assets/icons/icon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "caaf79ea-59af-4276-9a4b-df6ca9e023c7"
+      }
     }
   }
 }
